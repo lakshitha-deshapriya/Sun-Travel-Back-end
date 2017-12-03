@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<persistence version="2.0" xmlns="http://java.sun.com/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://java.sun.com/xml/ns/persistence
+   http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+
+    <persistence-unit name="Sun_Travel_Agency_JPA" transaction-type="RESOURCE_LOCAL">
+        <class>Classes.dbEntity.LdAccommodationEntity</class>
+        <class>Classes.dbEntity.LdAddressEntity</class>
+        <class>Classes.dbEntity.LdCityEntity</class>
+        <class>Classes.dbEntity.LdContractsEntity</class>
+        <class>Classes.dbEntity.LdCountryEntity</class>
+        <class>Classes.dbEntity.LdCustomerEntity</class>
+        <class>Classes.dbEntity.LdHotelEntity</class>
+        <class>Classes.dbEntity.LdPaymentEntity</class>
+        <class>Classes.dbEntity.LdRoomsEntity</class>
+        <class>Classes.dbEntity.LdRoomTypeEntity</class>
+        <class>Classes.dbEntity.LdRoomtypeAvailabilityEntity</class>
+
+        <properties>
+            <property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@localhost:1521:XE"/>
+            <property name="javax.persistence.jdbc.user" value="SYSTEM"/>
+            <property name="javax.persistence.jdbc.password" value="abcd1234"/>
+            <property name="javax.persistence.jdbc.driver" value="oracle.jdbc.driver.OracleDriver"/>
+            <property name="Sun_Travel_Agency.logging.level" value="FINE"/>
+            <property name="Sun_Travel_Agency.ddl-generation" value="create-tables"/>
+            <property name="openjpa.ConnectionURL" value="jdbc:oracle:thin:@localhost:1521:XE"/>
+            <property name="openjpa.ConnectionDriverName" value="oracle.jdbc.OracleDriver"/>
+        </properties>
+
+    </persistence-unit>
+</persistence>
