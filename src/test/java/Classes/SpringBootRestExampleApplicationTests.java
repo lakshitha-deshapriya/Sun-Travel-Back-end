@@ -9,10 +9,12 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = Runner.class)
 @WebAppConfiguration
-public class SpringBootRestExampleApplicationTests {
+public class SpringBootRestExampleApplicationTests
+{
 
 	@Test
-	public void contextLoads() {
+	public void contextLoads()
+	{
 	}
 
 }

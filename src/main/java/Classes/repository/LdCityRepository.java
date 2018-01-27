@@ -5,8 +5,9 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface LdCityRepository extends JpaRepository<LdCityEntity,Long>{
+public interface LdCityRepository extends JpaRepository<LdCityEntity, Long>
+{
 
-
+	LdCityEntity findByCityName( String cityName );
 
 }

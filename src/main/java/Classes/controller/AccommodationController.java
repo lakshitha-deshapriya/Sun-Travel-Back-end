@@ -10,18 +10,21 @@ import java.util.Collection;
 @RestController
 @RequestMapping("accommodation")
 @CrossOrigin(origins = "*")
-public class AccommodationController {
+public class AccommodationController
+{
 
-    @Autowired
-    private AccommodationServices accommodationServices;
+	@Autowired
+	private AccommodationServices accommodationServices;
 
-    @RequestMapping(method = RequestMethod.GET)
-    public Collection<LdAccommodationEntity> getAllContracts(){
-        return this.accommodationServices.getAllAccommodations();
-    }
+	@RequestMapping(method = RequestMethod.GET)
+	public Collection<LdAccommodationEntity> getAllContracts()
+	{
+		return this.accommodationServices.getAllAccommodations();
+	}
 
-    @RequestMapping(method = RequestMethod.POST)
-    public void InsertCountry(@RequestBody LdAccommodationEntity ldAccommodationEntity){
-        this.accommodationServices.InsertAccommodation(ldAccommodationEntity);
-    }
+	@RequestMapping(method = RequestMethod.POST)
+	public void InsertCountry( @RequestBody LdAccommodationEntity ldAccommodationEntity )
+	{
+		this.accommodationServices.InsertAccommodation( ldAccommodationEntity );
+	}
 }

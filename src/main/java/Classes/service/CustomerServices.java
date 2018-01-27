@@ -1,5 +1,6 @@
 package Classes.service;
 
+import Classes.dbEntity.LdAddressEntity;
 import Classes.dbEntity.LdCustomerEntity;
 import Classes.repository.LdCustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,16 +9,24 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class CustomerServices {
+public class CustomerServices
+{
 
-    @Autowired
-    private LdCustomerRepository ldCustomerRepository;
+	@Autowired
+	private LdCustomerRepository ldCustomerRepository;
 
-    public List<LdCustomerEntity> getAllCustomers(){
-        return ldCustomerRepository.findAll();
-    }
+	public List<LdCustomerEntity> getAllCustomers()
+	{
+		return ldCustomerRepository.findAll();
+	}
 
-    public void InsertCustomer(LdCustomerEntity ldCustomerEntity){
-        this.ldCustomerRepository.save(ldCustomerEntity);
-    }
+	public LdCustomerEntity InsertCustomer( LdCustomerEntity ldCustomerEntity )
+	{
+		return this.ldCustomerRepository.save( ldCustomerEntity );
+	}
+
+	public LdCustomerEntity getCustomerByData( String fname, String lname, LdAddressEntity ldAddressEntity )
+	{
+		return this.ldCustomerRepository.findByFNameAndLNameAndLdAddressByAddressId( fname, lname, ldAddressEntity );
+	}
 }

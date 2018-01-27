@@ -10,18 +10,21 @@ import java.util.Collection;
 @RestController
 @RequestMapping("customer")
 @CrossOrigin(origins = "*")
-public class CustomerController {
+public class CustomerController
+{
 
-    @Autowired
-    private CustomerServices customerServices;
+	@Autowired
+	private CustomerServices customerServices;
 
-    @RequestMapping(method = RequestMethod.GET)
-    public Collection<LdCustomerEntity> getAllCustomers(){
-        return this.customerServices.getAllCustomers();
-    }
+	@RequestMapping(method = RequestMethod.GET)
+	public Collection<LdCustomerEntity> getAllCustomers()
+	{
+		return this.customerServices.getAllCustomers();
+	}
 
-    @RequestMapping(method = RequestMethod.POST)
-    public void InsertCustomer(@RequestBody LdCustomerEntity ldCustomerEntity){
-        this.customerServices.InsertCustomer(ldCustomerEntity);
-    }
+	@RequestMapping(method = RequestMethod.POST)
+	public void InsertCustomer( @RequestBody LdCustomerEntity ldCustomerEntity )
+	{
+		this.customerServices.InsertCustomer( ldCustomerEntity );
+	}
 }

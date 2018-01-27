@@ -10,18 +10,21 @@ import java.util.Collection;
 @RestController
 @RequestMapping("address")
 @CrossOrigin(origins = "*")
-public class AddressController {
+public class AddressController
+{
 
-    @Autowired
-    private AddressServices addressServices;
+	@Autowired
+	private AddressServices addressServices;
 
-    @RequestMapping(method = RequestMethod.GET)
-    public Collection<LdAddressEntity> getAllAddress(){
-        return addressServices.getAllAddresses();
-    }
+	@RequestMapping(method = RequestMethod.GET)
+	public Collection<LdAddressEntity> getAllAddress()
+	{
+		return addressServices.getAllAddresses();
+	}
 
-    @RequestMapping(method = RequestMethod.POST)
-    public void InsertAddressData(@RequestBody LdAddressEntity ldAddressEntity){
-        this.addressServices.insertAddress(ldAddressEntity);
-    }
+	@RequestMapping(method = RequestMethod.POST)
+	public void InsertAddressData( @RequestBody LdAddressEntity ldAddressEntity )
+	{
+		this.addressServices.insertAddress( ldAddressEntity );
+	}
 }

@@ -10,18 +10,21 @@ import java.util.Collection;
 @RestController
 @RequestMapping("cities")
 @CrossOrigin(origins = "*")
-public class CityController {
+public class CityController
+{
 
-    @Autowired
-    private CityServices cityServices;
+	@Autowired
+	private CityServices cityServices;
 
-    @RequestMapping(method = RequestMethod.GET)
-    public Collection<LdCityEntity> getAlllCities(){
-        return this.cityServices.getAllCities();
-    }
+	@RequestMapping(method = RequestMethod.GET)
+	public Collection<LdCityEntity> getAlllCities()
+	{
+		return this.cityServices.getAllCities();
+	}
 
-    @RequestMapping(method = RequestMethod.POST)
-    public void InsertingCity(@RequestBody LdCityEntity ldCityEntity){
-        this.cityServices.InsertCity(ldCityEntity);
-    }
+	@RequestMapping(method = RequestMethod.POST)
+	public void InsertingCity( @RequestBody LdCityEntity ldCityEntity )
+	{
+		this.cityServices.InsertCity( ldCityEntity );
+	}
 }

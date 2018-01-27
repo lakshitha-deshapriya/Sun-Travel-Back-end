@@ -8,16 +8,19 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class PaymentServices {
+public class PaymentServices
+{
 
-    @Autowired
-    private LdPaymentRepository ldPaymentRepository;
+	@Autowired
+	private LdPaymentRepository ldPaymentRepository;
 
-    public List<LdPaymentEntity> getAllPayments(){
-        return ldPaymentRepository.findAll();
-    }
+	public List<LdPaymentEntity> getAllPayments()
+	{
+		return ldPaymentRepository.findAll();
+	}
 
-    public void InsertPayment(LdPaymentEntity ldPaymentEntity){
-        this.ldPaymentRepository.save(ldPaymentEntity);
-    }
+	public void InsertPayment( LdPaymentEntity ldPaymentEntity )
+	{
+		this.ldPaymentRepository.save( ldPaymentEntity );
+	}
 }
